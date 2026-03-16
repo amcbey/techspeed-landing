@@ -26,6 +26,7 @@ const team = [
   {
     name: "Louis Helsen",
     title: "Clearing Services & Investment Banking",
+    bio: "Louis Helsen manages investment banking efforts as well as the onboarding of introducing broker-dealers at TechSpeed Clearing. Louis has three years of experience in the securities industry in which he has served as a broker, clearing relationship manager, and investment banker. He currently holds Series 7, 24, 63, 65, and 79 licenses and earned a Business Management degree from Rensselaer Polytechnic Institute.",
   },
   {
     name: "Alex McBey",
