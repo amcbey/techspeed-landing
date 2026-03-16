@@ -97,7 +97,7 @@ const Header = () => {
           <a
             href="/technology/fintrade"
             onClick={(e) => { e.preventDefault(); navigate("/technology/fintrade"); }}
-            className="text-sm font-medium nav-tech-glow"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Technology
           </a>
