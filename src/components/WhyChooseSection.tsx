@@ -22,12 +22,10 @@ const reasons = [
 const WhyChooseSection = () => {
   return (
     <section id="about" className="relative py-20 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-foreground/85 z-10" />
         <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
       </div>
-
       <div className="container relative z-20">
         <h2 className="text-3xl font-bold text-primary-foreground text-center mb-12">
           Why Choose TechSpeed Clearing?

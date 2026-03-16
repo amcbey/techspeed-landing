@@ -8,7 +8,6 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative min-h-[520px] flex items-center overflow-hidden">
-      {/* Background image - right side */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
         <img
@@ -18,7 +17,6 @@ const HeroSection = () => {
           loading="eager"
         />
       </div>
-
       <div className="container relative z-20 py-20 md:py-28">
         <div className="max-w-lg">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground mb-4">
@@ -28,12 +26,8 @@ const HeroSection = () => {
             Trusted Clearing Solutions for Investors & Financial Institutions
           </p>
           <div className="flex items-center gap-4">
-            <Button variant="hero" size="lg">
-              Get Started
-            </Button>
-            <Button variant="hero-outline" size="lg" onClick={scrollToServices}>
-              Learn More
-            </Button>
+            <Button variant="hero" size="lg">Get Started</Button>
+            <Button variant="hero-outline" size="lg" onClick={scrollToServices}>Learn More</Button>
           </div>
         </div>
       </div>
