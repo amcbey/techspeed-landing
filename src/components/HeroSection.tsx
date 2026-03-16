@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-[520px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
+<div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
         <img
           src={heroBg}
           alt="Technology abstract background"
