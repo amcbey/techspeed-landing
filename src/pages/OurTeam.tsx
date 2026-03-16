@@ -5,8 +5,8 @@ import { User } from "lucide-react";
 const team = [
   {
     name: "Robert McBey",
-    title: "Chief Financial Officer (CFO)",
-    bio: "Robert McBey is the Chief Financial Officer at TechSpeed Clearing. Mr. McBey has over 30 years of experience in the securities industry in various roles including Chief Compliance Officer, Director of Internal Audit, Chief Operations Officer and CEO of Penson Financial Service's Canadian and United Kingdom subsidiaries. Mr. McBey, a former allied member of the New York Stock Exchange, currently holds Series 4, 7, 8, 14, 24, 27, 63 and 65 licenses. Mr. McBey earned a Finance degree from York University.",
+    title: "Chief Executive Officer (CEO)",
+    bio: "Robert McBey is the Chief Executive Officer at TechSpeed Clearing. Mr. McBey has over 30 years of experience in the securities industry in various roles including Chief Compliance Officer, Director of Internal Audit, Chief Operations Officer and CEO of Penson Financial Service's Canadian and United Kingdom subsidiaries. Mr. McBey, a former allied member of the New York Stock Exchange, currently holds Series 4, 7, 8, 14, 24, 27, 63 and 65 licenses. Mr. McBey earned a Finance degree from York University.",
   },
   {
     name: "Peter Stack",
