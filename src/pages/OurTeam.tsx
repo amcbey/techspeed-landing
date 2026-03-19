@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { User } from "lucide-react";
 import alexHeadshot from "@/assets/alex-mcbey.jpg";
 import georgeHeadshot from "@/assets/george-martin.png";
+import peterHeadshot from "@/assets/peter-stack.jpg";
 
 const leadership = [
   {
@@ -14,6 +15,7 @@ const leadership = [
     name: "Peter Stack",
     title: "Director of Securities Finance",
     bio: "Peter Stack is the Director of Securities Lending at TechSpeed Clearing. Mr. Stack has 25 years of experience in the securities industry and holds Series 7, 63 and 24 licenses. Mr. Stack earned a Bachelor of Science degree from St. John's University. Mr. Stack started his securities lending career at the Bank of New York. Mr. Stack moved to trade structured products through securities lending platforms at Maple Securities, Velocity Clearing, and Wilson-Davis & Co.",
+    photo: peterHeadshot,
   },
   {
     name: "George Martin",

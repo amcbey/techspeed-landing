@@ -22,7 +22,6 @@ const Footer = () => {
                 { label: "Technology — FinTrade", href: "/technology/fintrade" },
                 { label: "Clients", href: "/clients" },
                 { label: "Resources", href: "/research" },
-                { label: "Disclosures", href: "/disclosures" },
               ].map((l) => (
                 <li key={l.label}>
                   <a
@@ -69,7 +68,6 @@ const Footer = () => {
               {[
                 { label: "Our Mission", href: "/about/our-mission" },
                 { label: "Our Team", href: "/about/our-team" },
-                { label: "Disclosures", href: "/disclosures" },
               ].map((l) => (
                 <li key={l.label}>
                   <a
