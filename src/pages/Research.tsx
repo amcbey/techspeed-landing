@@ -7,65 +7,64 @@ import CTABanner from "@/components/CTABanner";
 
 const featured = {
   category: "Regulatory Update",
-  title: "2025 FINRA Annual Regulatory Oversight Report",
+  title: "FINRA Publishes 2026 Regulatory Oversight Report",
   excerpt:
-    "FINRA's annual report covers 24 compliance priority areas for broker-dealers, including Regulation Best Interest, AML and fraud, third-party vendor risk, cybersecurity, AI in securities, extended-hours trading, and liquidity risk management — serving as a key compliance roadmap for the industry.",
-  date: "January 2025",
+    "FINRA released its nearly 90-page 2026 Annual Regulatory Oversight Report, highlighting emerging compliance risks for broker-dealers including generative AI, cybersecurity and cyber-enabled fraud, manipulative trading in small-cap equities, and third-party vendor risk. The report reemphasizes perennial focus areas such as Regulation Best Interest, best execution, net capital, and consolidated audit trail compliance.",
+  date: "December 9, 2025",
   source: "FINRA",
-  href: "https://www.finra.org/rules-guidance/guidance/reports/2025-finra-annual-regulatory-oversight-report",
+  href: "https://www.finra.org/media-center/newsreleases/2025/finra-publishes-2026-regulatory-oversight-report-empower-member-firm",
 };
 
 const articles = [
   {
+    category: "Industry Insight",
+    icon: TrendingUp,
+    title: "CME Says SEC Approved New Clearing House for Treasuries, Repo",
+    excerpt:
+      "The SEC approved CME Securities Clearing Inc. as a registered clearing agency for U.S. Treasury securities, creating a second central counterparty alongside DTCC's FICC ahead of the mandatory clearing deadlines.",
+    date: "December 2, 2025",
+    source: "Bloomberg",
+    href: "https://www.bloomberg.com/news/articles/2025-12-02/cme-says-sec-approved-new-clearing-house-for-treasuries-repo",
+  },
+  {
     category: "Regulatory Update",
     icon: Activity,
-    title: "T+1 Settlement: What Investors Need to Know",
+    title: "SEC Extends U.S. Treasury Clearing Compliance Deadlines",
     excerpt:
-      "The SEC's investor bulletin explains the rule shortening the standard settlement cycle from two business days to one for stocks, bonds, ETFs, and other securities.",
-    date: "2024",
-    source: "SEC.gov",
-    href: "https://www.sec.gov/resources-for-investors/investor-alerts-bulletins/new-t1-settlement-cycle-what-investors-need-know-investor-bulletin",
-    icon2: Activity,
+      "The SEC extended mandatory central clearing compliance deadlines — pushing the cash market to December 31, 2026 and repo to June 30, 2027 — to give broker-dealers and clearing agencies additional time to resolve outstanding implementation issues.",
+    date: "March 4, 2025",
+    source: "Federal Register / SEC",
+    href: "https://www.federalregister.gov/documents/2025/03/04/2025-03351/extension-of-compliance-dates-for-standards-for-covered-clearing-agencies-for-us-treasury-securities",
   },
   {
-    category: "Risk Alert",
-    icon: BarChart2,
-    title: "Shortening the Securities Transaction Settlement Cycle",
-    excerpt:
-      "The SEC's Division of Examinations outlines compliance expectations, operational readiness areas, and specific risks examiners reviewed during the T+1 transition.",
-    date: "March 27, 2024",
-    source: "SEC.gov",
-    href: "https://www.sec.gov/compliance/risk-alerts/shortening-securities-transaction-settlement-cycle",
-  },
-  {
-    category: "Press Release",
+    category: "Compliance",
     icon: FileText,
-    title: "SEC Extends Compliance Dates for U.S. Treasury Clearing Rules",
+    title: "SEC Issues FAQs for Broker-Dealers on Treasury Clearing Requirements",
     excerpt:
-      "The SEC extended mandatory central clearing deadlines for U.S. Treasury cash and repo transactions, giving broker-dealers and clearing firms additional time to meet operational requirements.",
-    date: "2025",
+      "The SEC's Division of Trading and Markets issued detailed FAQs guiding broker-dealers through the customer protection rule amendments tied to the U.S. Treasury clearing mandate ahead of the 2026 deadline.",
+    date: "August 6, 2025",
     source: "SEC.gov",
-    href: "https://www.sec.gov/newsroom/press-releases/2025-43",
+    href: "https://www.sec.gov/newsroom/press-releases/2025-105-staff-issues-faqs-help-broker-dealers-implement-financial-responsibility-requirements-related-us",
+  },
+  {
+    category: "Enforcement",
+    icon: BarChart2,
+    title: "SEC and FINRA Enforcement Trends for Broker-Dealers: 2026 Outlook",
+    excerpt:
+      "An analysis of the significant leadership changes and 'back to basics' enforcement shift at the SEC and FINRA in 2025, and what broker-dealers should expect from examinations and enforcement in 2026.",
+    date: "March 2026",
+    source: "Morgan Lewis",
+    href: "https://www.morganlewis.com/pubs/2026/03/sec-and-finra-enforcement-trends-for-broker-dealers-2025-2026",
   },
   {
     category: "Industry Insight",
     icon: BookOpen,
-    title: "Impacts of Mandatory Clearing for U.S. Treasury Repo",
+    title: "Securities Lending Outlook for 2026",
     excerpt:
-      "DTCC examines how the SEC's mandate requiring central clearing of Treasury repo transactions will reshape risk management, margin requirements, and operational workflows for clearing firms.",
-    date: "June 17, 2024",
-    source: "DTCC",
-    href: "https://www.dtcc.com/dtcc-connection/articles/2024/june/17/impacts-of-mandatory-clearing-for-us-treasury-repo",
-  },
-  {
-    category: "Market Analysis",
-    icon: TrendingUp,
-    title: "Regulation, Deals, and Crypto: Fintech Themes to Watch in 2025",
-    excerpt:
-      "Bloomberg identifies deregulation, a rebound in fintech M&A, and expanding use of AI and blockchain in capital markets as the defining forces shaping broker-dealers and trading infrastructure in 2025.",
-    date: "January 1, 2025",
-    source: "Bloomberg",
-    href: "https://www.bloomberg.com/news/articles/2025-01-01/regulation-deals-and-crypto-fintech-themes-to-watch-in-2025",
+      "An industry outlook examining T+1 expansion into European markets, Basel III endgame capital rules, increased lending activity in Asia-Pacific, and the integration of AI and collateral optimization into lending platforms.",
+    date: "March 11, 2026",
+    source: "Securities Finance Times",
+    href: "https://www.securitiesfinancetimes.com/specialistfeatures/specialistfeature.php?specialist_id=946",
   },
 ];
 
