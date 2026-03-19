@@ -1,7 +1,79 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
+
+const NODE_COUNT = 28;
+const nodes = Array.from({ length: NODE_COUNT }, (_, i) => ({
+  id: i,
+  x: Math.random() * 100,
+  y: Math.random() * 100,
+  dx: (Math.random() - 0.5) * 0.015,
+  dy: (Math.random() - 0.5) * 0.015,
+}));
+
+function NetworkCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pts = useRef(nodes.map(n => ({ ...n })));
+  const raf = useRef<number>();
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d")!;
+
+    const draw = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const p = pts.current;
+      p.forEach(pt => {
+        pt.x += pt.dx;
+        pt.y += pt.dy;
+        if (pt.x < 0 || pt.x > 100) pt.dx *= -1;
+        if (pt.y < 0 || pt.y > 100) pt.dy *= -1;
+      });
+
+      // Draw edges
+      for (let i = 0; i < p.length; i++) {
+        for (let j = i + 1; j < p.length; j++) {
+          const ax = (p[i].x / 100) * canvas.width;
+          const ay = (p[i].y / 100) * canvas.height;
+          const bx = (p[j].x / 100) * canvas.width;
+          const by = (p[j].y / 100) * canvas.height;
+          const dist = Math.hypot(ax - bx, ay - by);
+          if (dist < 160) {
+            ctx.beginPath();
+            ctx.moveTo(ax, ay);
+            ctx.lineTo(bx, by);
+            ctx.strokeStyle = `rgba(96,165,250,${0.12 * (1 - dist / 160)})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw nodes
+      p.forEach(pt => {
+        const x = (pt.x / 100) * canvas.width;
+        const y = (pt.y / 100) * canvas.height;
+        ctx.beginPath();
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(96,165,250,0.4)";
+        ctx.fill();
+      });
+
+      raf.current = requestAnimationFrame(draw);
+    };
+
+    draw();
+    return () => cancelAnimationFrame(raf.current!);
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />;
+}
 
 const ClearingCustody = () => {
   return (
@@ -10,31 +82,7 @@ const ClearingCustody = () => {
       <main className="flex-1">
         {/* Hero Banner */}
         <div className="relative overflow-hidden bg-foreground py-24 flex items-center justify-center min-h-[280px]">
-          <motion.div
-            className="absolute w-72 h-72 rounded-full bg-blue-500/20 blur-3xl"
-            animate={{ x: [0, 60, -40, 0], y: [0, -40, 30, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            style={{ top: "-4rem", left: "10%" }}
-          />
-          <motion.div
-            className="absolute w-96 h-96 rounded-full bg-indigo-500/15 blur-3xl"
-            animate={{ x: [0, -50, 30, 0], y: [0, 50, -20, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            style={{ bottom: "-6rem", right: "5%" }}
-          />
-          <motion.div
-            className="absolute w-48 h-48 rounded-full bg-blue-400/10 blur-2xl"
-            animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            style={{ top: "20%", right: "25%" }}
-          />
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: "linear-gradient(rgba(96,165,250,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(96,165,250,0.3) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
-          />
+          <NetworkCanvas />
           <div className="relative z-10 text-center px-6">
             <motion.p
               className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3"
