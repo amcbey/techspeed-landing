@@ -14,7 +14,7 @@ const row1 = [
   },
   {
     title: "Correspondent Brokerage",
-    body: "Scale your business and increase your firm's assets under management and profitability by offering a comprehensive range of services and execution routes from Velocity to benefit your clients.",
+    body: "Scale your business and increase your firm's assets under management and profitability by offering a comprehensive range of services and execution routes from us to benefit your clients.",
   },
 ];
 

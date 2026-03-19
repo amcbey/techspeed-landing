@@ -45,6 +45,7 @@ const team = [
   {
     name: "Andrew McBey",
     title: "Corporate Finance Associate",
+    bio: "Andrew McBey is a Corporate Finance Associate at TechSpeed Clearing. He graduated from Saint Louis University with a B.S. in Finance and received an M.S. in Finance from Southern Methodist University. He holds the Series 7 and 63 licenses.",
   },
 ];
 
