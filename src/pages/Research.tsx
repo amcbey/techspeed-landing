@@ -6,50 +6,66 @@ import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 
 const featured = {
-  category: "Market Analysis",
-  title: "Q1 2026 Equity Markets Outlook",
+  category: "Regulatory Update",
+  title: "2025 FINRA Annual Regulatory Oversight Report",
   excerpt:
-    "An in-depth analysis of equity market trends, volatility patterns, and clearing volume projections for the first quarter of 2026. Our research team examines macro conditions, sector rotations, and what broker-dealers should anticipate heading into the new quarter.",
-  date: "March 2026",
-  readTime: "8 min read",
+    "FINRA's annual report covers 24 compliance priority areas for broker-dealers, including Regulation Best Interest, AML and fraud, third-party vendor risk, cybersecurity, AI in securities, extended-hours trading, and liquidity risk management — serving as a key compliance roadmap for the industry.",
+  date: "January 2025",
+  source: "FINRA",
+  href: "https://www.finra.org/rules-guidance/guidance/reports/2025-finra-annual-regulatory-oversight-report",
 };
 
 const articles = [
   {
-    category: "Risk Management",
-    icon: BarChart2,
-    title: "Margin Risk Framework: Best Practices",
+    category: "Regulatory Update",
+    icon: Activity,
+    title: "T+1 Settlement: What Investors Need to Know",
     excerpt:
-      "A comprehensive guide to margin risk assessment, stress testing methodologies, and regulatory compliance for broker-dealers.",
-    date: "February 2026",
-    readTime: "6 min read",
+      "The SEC's investor bulletin explains the rule shortening the standard settlement cycle from two business days to one for stocks, bonds, ETFs, and other securities.",
+    date: "2024",
+    source: "SEC.gov",
+    href: "https://www.sec.gov/resources-for-investors/investor-alerts-bulletins/new-t1-settlement-cycle-what-investors-need-know-investor-bulletin",
+    icon2: Activity,
+  },
+  {
+    category: "Risk Alert",
+    icon: BarChart2,
+    title: "Shortening the Securities Transaction Settlement Cycle",
+    excerpt:
+      "The SEC's Division of Examinations outlines compliance expectations, operational readiness areas, and specific risks examiners reviewed during the T+1 transition.",
+    date: "March 27, 2024",
+    source: "SEC.gov",
+    href: "https://www.sec.gov/compliance/risk-alerts/shortening-securities-transaction-settlement-cycle",
+  },
+  {
+    category: "Press Release",
+    icon: FileText,
+    title: "SEC Extends Compliance Dates for U.S. Treasury Clearing Rules",
+    excerpt:
+      "The SEC extended mandatory central clearing deadlines for U.S. Treasury cash and repo transactions, giving broker-dealers and clearing firms additional time to meet operational requirements.",
+    date: "2025",
+    source: "SEC.gov",
+    href: "https://www.sec.gov/newsroom/press-releases/2025-43",
   },
   {
     category: "Industry Insight",
     icon: BookOpen,
-    title: "The Future of Securities Lending",
+    title: "Impacts of Mandatory Clearing for U.S. Treasury Repo",
     excerpt:
-      "How evolving market dynamics, technology, and regulation are reshaping securities lending and fully paid lending programs.",
-    date: "January 2026",
-    readTime: "5 min read",
+      "DTCC examines how the SEC's mandate requiring central clearing of Treasury repo transactions will reshape risk management, margin requirements, and operational workflows for clearing firms.",
+    date: "June 17, 2024",
+    source: "DTCC",
+    href: "https://www.dtcc.com/dtcc-connection/articles/2024/june/17/impacts-of-mandatory-clearing-for-us-treasury-repo",
   },
   {
-    category: "White Paper",
-    icon: FileText,
-    title: "Smart Order Routing in Modern Markets",
+    category: "Market Analysis",
+    icon: TrendingUp,
+    title: "Regulation, Deals, and Crypto: Fintech Themes to Watch in 2025",
     excerpt:
-      "Examining algorithmic execution strategies, dark pool access, and liquidity sourcing for optimal trade performance.",
-    date: "December 2025",
-    readTime: "10 min read",
-  },
-  {
-    category: "Regulatory Update",
-    icon: Activity,
-    title: "T+1 Settlement: One Year In",
-    excerpt:
-      "A retrospective on the industry's transition to T+1 settlement — what worked, what didn't, and what comes next for clearing firms.",
-    date: "November 2025",
-    readTime: "7 min read",
+      "Bloomberg identifies deregulation, a rebound in fintech M&A, and expanding use of AI and blockchain in capital markets as the defining forces shaping broker-dealers and trading infrastructure in 2025.",
+    date: "January 1, 2025",
+    source: "Bloomberg",
+    href: "https://www.bloomberg.com/news/articles/2025-01-01/regulation-deals-and-crypto-fintech-themes-to-watch-in-2025",
   },
 ];
 
@@ -113,7 +129,7 @@ const Research = () => {
           <div className="container max-w-5xl">
             <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-6">Featured</p>
             <motion.div
-              className="bg-secondary/40 rounded-xl border border-border p-8 flex flex-col md:flex-row gap-8 hover:shadow-md transition-shadow cursor-pointer group"
+              className="bg-secondary/40 rounded-xl border border-border p-8 flex flex-col md:flex-row gap-8 hover:shadow-md transition-shadow group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -123,14 +139,19 @@ const Research = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <Badge variant="secondary">{featured.category}</Badge>
                   <span className="text-xs text-muted-foreground">{featured.date}</span>
-                  <span className="text-xs text-muted-foreground">· {featured.readTime}</span>
+                  <span className="text-xs text-muted-foreground">· {featured.source}</span>
                 </div>
                 <h2 className="text-2xl font-bold text-foreground mb-3 leading-snug">{featured.title}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-5">{featured.excerpt}</p>
-                <button className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors group/btn">
+                <a
+                  href={featured.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors group/btn"
+                >
                   Read full report
                   <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-0.5" />
-                </button>
+                </a>
               </div>
               <div className="hidden md:flex items-center justify-center w-40 shrink-0">
                 <div className="w-28 h-28 rounded-full bg-blue-500/10 flex items-center justify-center">
@@ -159,7 +180,7 @@ const Research = () => {
                     <Badge variant="secondary" className="text-xs font-medium">{article.category}</Badge>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span>{article.date}</span>
-                      <span>· {article.readTime}</span>
+                      <span>· {article.source}</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 flex-1">
@@ -172,10 +193,15 @@ const Research = () => {
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border">
-                    <button className="flex items-center gap-1.5 text-xs font-medium text-foreground/60 hover:text-foreground transition-colors group/btn">
+                    <a
+                      href={article.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-xs font-medium text-foreground/60 hover:text-foreground transition-colors group/btn"
+                    >
                       Read more
                       <ArrowRight size={12} className="transition-transform group-hover/btn:translate-x-0.5" />
-                    </button>
+                    </a>
                   </div>
                 </motion.article>
               ))}

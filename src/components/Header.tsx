@@ -28,7 +28,7 @@ const aboutLinks = [
 const otherNavLinks = [
   { label: "Home", href: "/" },
   { label: "Clients", href: "/clients" },
-  { label: "Resources", href: "/research" },
+  { label: "Research", href: "/research" },
   { label: "Contact", href: "#contact" },
 ];
 
