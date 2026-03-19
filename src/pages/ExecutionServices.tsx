@@ -47,7 +47,7 @@ function NetworkCanvas() {
             ctx.beginPath();
             ctx.moveTo(ax, ay);
             ctx.lineTo(bx, by);
-            ctx.strokeStyle = `rgba(96,165,250,${0.12 * (1 - dist / 160)})`;
+            ctx.strokeStyle = `rgba(255,255,255,${0.12 * (1 - dist / 160)})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
@@ -59,7 +59,7 @@ function NetworkCanvas() {
         const y = (pt.y / 100) * canvas.height;
         ctx.beginPath();
         ctx.arc(x, y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(96,165,250,0.4)";
+        ctx.fillStyle = "rgba(255,255,255,0.4)";
         ctx.fill();
       });
 
