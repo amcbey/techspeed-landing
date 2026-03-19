@@ -1,4 +1,5 @@
 import { Star, ShieldCheck, HeartHandshake } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const reasons = [
@@ -19,7 +20,9 @@ const reasons = [
   },
 ];
 
+
 const WhyChooseSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="about" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
@@ -34,7 +37,8 @@ const WhyChooseSection = () => {
           {reasons.map((r) => (
             <div
               key={r.title}
-              className="flex flex-col items-start p-6 rounded-lg transition-all duration-200 hover:bg-primary-foreground/10 cursor-default group"
+              className={`flex flex-col items-start p-6 rounded-lg transition-all duration-200 hover:bg-primary-foreground/10 group ${r.title === "Proven Expertise" ? "cursor-pointer" : "cursor-default"}`}
+              onClick={() => r.title === "Proven Expertise" && navigate("/about/our-team")}
             >
               <div className="flex items-center gap-3 mb-3">
                 <r.icon className="w-6 h-6 text-primary-foreground" strokeWidth={2} />

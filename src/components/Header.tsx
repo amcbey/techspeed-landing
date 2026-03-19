@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,9 @@ const serviceLinks = [
   { label: "Clearing & Custody", href: "/services/clearing-custody" },
   { label: "Securities Lending & Financing", href: "/services/securities-lending" },
   { label: "Execution Services", href: "/services/execution-services" },
+  { label: "Corporate Treasury", href: "/services/corporate-treasury" },
+  { label: "Investment Banking", href: "/services/investment-banking" },
+  { label: "Regulatory & Compliance", href: "/services/regulatory-compliance" },
 ];
 
 const aboutLinks = [
@@ -25,7 +28,7 @@ const aboutLinks = [
 const otherNavLinks = [
   { label: "Home", href: "/" },
   { label: "Clients", href: "/clients" },
-  { label: "Research", href: "/research" },
+  { label: "Resources", href: "/research" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -33,8 +36,15 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -53,8 +63,8 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-border">
-      <div className="container flex items-center justify-between h-16">
+    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${scrolled ? "h-12 shadow-md" : "h-16"}`}>
+      <div className={`container flex items-center justify-between transition-all duration-300 ${scrolled ? "h-12" : "h-16"}`}>
         {/* Logo */}
         <a
           href="/"
@@ -70,7 +80,7 @@ const Header = () => {
           <a
             href="/"
             onClick={(e) => { e.preventDefault(); navigate("/"); }}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="anim-underline text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Home
           </a>
@@ -97,7 +107,7 @@ const Header = () => {
           <a
             href="/technology/fintrade"
             onClick={(e) => { e.preventDefault(); navigate("/technology/fintrade"); }}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="anim-underline text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Technology
           </a>
@@ -126,7 +136,7 @@ const Header = () => {
               key={link.label}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="anim-underline text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>

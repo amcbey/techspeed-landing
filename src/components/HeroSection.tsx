@@ -6,10 +6,14 @@ const HeroSection = () => {
     document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToContact = () => {
+    document.querySelector("#inquiry")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="home" className="relative min-h-[520px] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-<div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
         <img
           src={heroBg}
           alt="Technology abstract background"
@@ -26,7 +30,7 @@ const HeroSection = () => {
             Trusted Clearing Solutions for Investors & Financial Institutions
           </p>
           <div className="flex items-center gap-4">
-            <Button variant="hero" size="lg">Get Started</Button>
+            <Button variant="hero" size="lg" onClick={scrollToContact}>Get Started</Button>
             <Button variant="hero-outline" size="lg" onClick={scrollToServices}>Learn More</Button>
           </div>
         </div>

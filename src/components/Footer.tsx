@@ -1,7 +1,9 @@
 import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-white.png";
 
 const Footer = () => {
+  const navigate = useNavigate();
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -10,21 +12,22 @@ const Footer = () => {
     <footer>
       {/* Upper footer */}
       <div className="bg-footer-bg py-14">
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="container grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Quick Links */}
           <div>
             <h4 className="font-bold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { label: "Home", href: "#home" },
-                { label: "About Us", href: "#about" },
-                { label: "Services", href: "#services" },
-                { label: "Contact", href: "#contact" },
+                { label: "Home", href: "/" },
+                { label: "Technology — FinTrade", href: "/technology/fintrade" },
+                { label: "Clients", href: "/clients" },
+                { label: "Resources", href: "/research" },
+                { label: "Disclosures", href: "/disclosures" },
               ].map((l) => (
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    onClick={(e) => { e.preventDefault(); scrollTo(l.href); }}
+                    onClick={(e) => { e.preventDefault(); if (l.href.startsWith("/")) { navigate(l.href); window.scrollTo(0, 0); } else { scrollTo(l.href); } }}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {l.label}
@@ -36,16 +39,72 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-foreground mb-4">Services</h4>
+            <h4 className="font-bold text-foreground mb-4">Products & Services</h4>
             <ul className="space-y-2">
-              {["Clearing & Settlement", "Custody Services", "Risk Management"].map((s) => (
-                <li key={s}>
+              {[
+                { label: "Clearing & Custody", href: "/services/clearing-custody" },
+                { label: "Securities Lending & Financing", href: "/services/securities-lending" },
+                { label: "Execution Services", href: "/services/execution-services" },
+                { label: "Corporate Treasury", href: "/services/corporate-treasury" },
+                { label: "Investment Banking", href: "/services/investment-banking" },
+                { label: "Regulatory & Compliance", href: "/services/regulatory-compliance" },
+              ].map((l) => (
+                <li key={l.label}>
                   <a
-                    href="#services"
-                    onClick={(e) => { e.preventDefault(); scrollTo("#services"); }}
+                    href={l.href}
+                    onClick={(e) => { e.preventDefault(); navigate(l.href); window.scrollTo(0, 0); }}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    {s}
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* About Us */}
+          <div>
+            <h4 className="font-bold text-foreground mb-4">About Us</h4>
+            <ul className="space-y-2">
+              {[
+                { label: "Our Mission", href: "/about/our-mission" },
+                { label: "Our Team", href: "/about/our-team" },
+                { label: "Disclosures", href: "/disclosures" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    onClick={(e) => { e.preventDefault(); if (l.href.startsWith("/")) { navigate(l.href); window.scrollTo(0, 0); } else { scrollTo(l.href); } }}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal & Privacy */}
+          <div>
+            <h4 className="font-bold text-foreground mb-4">Legal &amp; Privacy</h4>
+            <ul className="space-y-2">
+              {[
+                { label: "Privacy Policy", href: "/disclosures" },
+                { label: "Terms of Use", href: "/disclosures" },
+                { label: "Regulatory Disclosures", href: "/disclosures" },
+                { label: "Cookie Policy", href: "/disclosures" },
+                { label: "FINRA BrokerCheck", href: "https://brokercheck.finra.org/firm/summary/313766" },
+                { label: "SIPC", href: "https://www.sipc.org" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    onClick={(e) => { if (l.href.startsWith("/")) { e.preventDefault(); navigate(l.href); window.scrollTo(0, 0); } }}
+                    target={l.href.startsWith("http") ? "_blank" : undefined}
+                    rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {l.label}
                   </a>
                 </li>
               ))}
@@ -62,14 +121,33 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:general@techspeedclearing.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  <Mail size={16} /> general@techspeedclearing.com
+                <a href="mailto:Info@techspeedclearing.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Mail size={16} /> Info@techspeedclearing.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin size={16} /> 16479 Dallas Parkway, Addison, Texas 75001
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust badges strip */}
+      <div className="bg-secondary/60 border-t border-border py-5">
+        <div className="container flex flex-wrap items-center justify-center gap-4">
+          {[
+            { label: "Member", sub: "FINRA", color: "border-blue-300 text-blue-800 bg-blue-50" },
+            { label: "Member", sub: "SIPC", color: "border-blue-300 text-blue-800 bg-blue-50" },
+            { label: "Registered", sub: "SEC", color: "border-blue-300 text-blue-800 bg-blue-50" },
+          ].map((b) => (
+            <div key={b.sub} className={`flex items-center gap-2 px-4 py-2 rounded border ${b.color} text-xs font-semibold`}>
+              <span className="text-[10px] font-normal uppercase tracking-wider opacity-70">{b.label}</span>
+              <span className="text-sm font-bold">{b.sub}</span>
+            </div>
+          ))}
+          <div className="text-xs text-muted-foreground pl-2 hidden md:block">
+            TechSpeed Clearing LLC — Broker-Dealer · SEC · FINRA · SIPC
           </div>
         </div>
       </div>
@@ -113,7 +191,9 @@ const Footer = () => {
             </p>
             <p className="text-xs text-footer-bottom-foreground/50 text-center leading-relaxed">
               Check the background of TechSpeed Clearing LLC and its registered representatives on{" "}
-              <a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-footer-bottom-foreground transition-colors">FINRA BrokerCheck</a>.
+              <a href="https://brokercheck.finra.org/firm/summary/313766" target="_blank" rel="noopener noreferrer" className="underline hover:text-footer-bottom-foreground transition-colors">FINRA BrokerCheck</a>.
+              &nbsp;|&nbsp;
+              <a href="/disclosures" className="underline hover:text-footer-bottom-foreground transition-colors">Regulatory Disclosures</a>
               &nbsp;|&nbsp; © {new Date().getFullYear()} TechSpeed Clearing LLC. All rights reserved.
             </p>
           </div>

@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import heroVideo from "@/assets/hero-video2.mp4";
+import CTABanner from "@/components/CTABanner";
 
 const sections = [
   {
@@ -124,9 +126,17 @@ function AnimatedSection({ section, index }: { section: typeof sections[0]; inde
 
 const FinTrade = () => {
   const heroRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -134,26 +144,10 @@ const FinTrade = () => {
       <main className="flex-1">
         {/* Animated hero banner */}
         <div ref={heroRef} className="relative overflow-hidden bg-foreground py-24 flex items-center justify-center min-h-[320px]">
-          {/* Animated floating orbs */}
-          <motion.div
-            className="absolute w-72 h-72 rounded-full bg-blue-500/20 blur-3xl"
-            animate={{ x: [0, 60, -40, 0], y: [0, -40, 30, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            style={{ top: "-4rem", left: "10%" }}
-          />
-          <motion.div
-            className="absolute w-96 h-96 rounded-full bg-indigo-500/15 blur-3xl"
-            animate={{ x: [0, -50, 30, 0], y: [0, 50, -20, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            style={{ bottom: "-6rem", right: "5%" }}
-          />
-          <motion.div
-            className="absolute w-48 h-48 rounded-full bg-blue-400/10 blur-2xl"
-            animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            style={{ top: "20%", right: "25%" }}
-          />
-
+          <video ref={videoRef} autoPlay muted playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/10" />
           {/* Animated grid lines */}
           <div className="absolute inset-0 opacity-10"
             style={{
@@ -167,7 +161,8 @@ const FinTrade = () => {
             style={{ y: heroY, opacity: heroOpacity }}
           >
             <motion.p
-              className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3"
+              className="text-sm font-semibold tracking-widest uppercase mb-3"
+              style={{ color: "#2962ff" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -175,7 +170,8 @@ const FinTrade = () => {
               Proprietary Platform
             </motion.p>
             <motion.h1
-              className="text-4xl md:text-5xl font-bold text-white mb-5"
+              className="text-4xl md:text-5xl font-bold mb-5"
+              style={{ color: "#ffffff" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -205,7 +201,7 @@ const FinTrade = () => {
                 { label: "Security", value: "MFA + Encrypted" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">{stat.value}</div>
+                  <div className="text-2xl font-bold" style={{ color: "#2962ff", textShadow: "0 0 10px rgba(41,98,255,1), 0 0 30px rgba(41,98,255,0.8), 0 0 60px rgba(41,98,255,0.5)" }}>{stat.value}</div>
                   <div className="text-xs text-white/50 mt-1 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
@@ -239,6 +235,11 @@ const FinTrade = () => {
             ))}
           </div>
         </section>
+        <CTABanner
+          heading="Schedule a FinTrade Demo"
+          subtext="Reach out to our team to arrange a demonstration and learn how FinTrade can streamline your trading operations."
+          buttonLabel="Request a Demo"
+        />
       </main>
       <Footer />
     </div>
