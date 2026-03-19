@@ -118,7 +118,7 @@ const Research = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Market analysis, industry perspectives, and best-practice guides from the TechSpeed Clearing research team.
+              Curated market analysis, regulatory updates, and industry perspectives from leading financial institutions and regulatory bodies.
             </motion.p>
           </div>
         </div>
@@ -205,6 +205,15 @@ const Research = () => {
                 </motion.article>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="py-8 bg-background border-t border-border">
+          <div className="container max-w-5xl">
+            <p className="text-xs text-muted-foreground/70 leading-relaxed">
+              <span className="font-semibold text-muted-foreground">Disclaimer:</span> The articles and reports featured on this page are sourced from third-party publications including regulatory bodies, financial institutions, and industry media. TechSpeed Clearing LLC did not author, produce, or endorse any of the content linked above. All views, opinions, and analyses are those of the respective authors and organizations. This content is provided for informational purposes only and does not constitute investment advice, legal guidance, or regulatory opinion on behalf of TechSpeed Clearing LLC.
+            </p>
           </div>
         </section>
 
