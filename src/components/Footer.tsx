@@ -185,7 +185,7 @@ const Footer = () => {
             </p>
             <p className="text-xs text-footer-bottom-foreground/70 text-center leading-relaxed">
               Margin trading involves significant risk and is not suitable for all investors. You may lose more than your initial investment. Options trading involves risk and is not appropriate for all investors. Please read the{" "}
-              <span className="italic">Characteristics and Risks of Standardized Options</span> before trading options.
+              <a href="https://www.theocc.com/getcontentasset/a151a9ae-d784-4a15-bdeb-23a029f50b70/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/riskstoc.pdf" target="_blank" rel="noopener noreferrer" className="italic underline hover:text-footer-bottom-foreground transition-colors">Characteristics and Risks of Standardized Options</a> before trading options.
             </p>
             <p className="text-xs text-footer-bottom-foreground/50 text-center leading-relaxed">
               Check the background of TechSpeed Clearing LLC and its registered representatives on{" "}
