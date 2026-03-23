@@ -159,7 +159,7 @@ const Footer = () => {
           </div>
 
           <a
-            href="https://www.linkedin.com/company/techspeed"
+            href="https://www.linkedin.com/company/techspeed-clearing-llc/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             className="text-footer-bottom-foreground/60 hover:text-footer-bottom-foreground transition-colors"
