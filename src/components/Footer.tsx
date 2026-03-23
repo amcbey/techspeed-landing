@@ -90,7 +90,6 @@ const Footer = () => {
                 { label: "Privacy Policy", href: "/privacy-policy.pdf" },
                 { label: "Terms of Use", href: "/disclosures" },
                 { label: "Regulatory Disclosures", href: "/disclosures" },
-                { label: "Cookie Policy", href: "/disclosures" },
                 { label: "FINRA BrokerCheck", href: "https://brokercheck.finra.org/firm/summary/313766" },
                 { label: "SIPC", href: "https://www.sipc.org" },
               ].map((l) => (
