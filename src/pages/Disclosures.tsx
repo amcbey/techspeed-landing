@@ -90,8 +90,8 @@ const Disclosures = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   Margin trading involves significant risk and is not suitable for all investors. You may lose
                   more than your initial investment. Options trading involves risk and is not appropriate for
-                  all investors. Please read the <span className="italic">Characteristics and Risks of
-                  Standardized Options</span> disclosure document before trading options.
+                  all investors. Please read the <a href="https://www.theocc.com/getcontentasset/a151a9ae-d784-4a15-bdeb-23a029f50b70/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/riskstoc.pdf" target="_blank" rel="noopener noreferrer" className="italic underline text-primary hover:opacity-80 transition-opacity">Characteristics and Risks of
+                  Standardized Options</a> disclosure document before trading options.
                 </p>
               </div>
 
