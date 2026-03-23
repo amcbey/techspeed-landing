@@ -155,7 +155,7 @@ const Footer = () => {
         <div className="container flex flex-col items-center gap-5">
           {/* Logo */}
           <div className="flex items-center gap-2 font-bold text-lg text-footer-bottom-foreground">
-            <img src={logo} alt="TechSpeed logo" className="h-24 w-auto object-contain" />
+            <img src={logo} alt="TechSpeed logo" className="h-64 w-auto object-contain" />
           </div>
 
           <a
