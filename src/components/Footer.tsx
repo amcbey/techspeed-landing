@@ -87,7 +87,7 @@ const Footer = () => {
             <h4 className="font-bold text-foreground mb-4">Legal &amp; Privacy</h4>
             <ul className="space-y-2">
               {[
-                { label: "Privacy Policy", href: "/disclosures" },
+                { label: "Privacy Policy", href: "/privacy-policy.pdf" },
                 { label: "Terms of Use", href: "/disclosures" },
                 { label: "Regulatory Disclosures", href: "/disclosures" },
                 { label: "Cookie Policy", href: "/disclosures" },
@@ -97,9 +97,9 @@ const Footer = () => {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    onClick={(e) => { if (l.href.startsWith("/")) { e.preventDefault(); navigate(l.href); window.scrollTo(0, 0); } }}
-                    target={l.href.startsWith("http") ? "_blank" : undefined}
-                    rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    onClick={(e) => { if (l.href.startsWith("/") && !l.href.endsWith(".pdf")) { e.preventDefault(); navigate(l.href); window.scrollTo(0, 0); } }}
+                    target={l.href.startsWith("http") || l.href.endsWith(".pdf") ? "_blank" : undefined}
+                    rel={l.href.startsWith("http") || l.href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {l.label}
