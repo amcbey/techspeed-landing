@@ -27,7 +27,6 @@ import ClearingCustody from "./pages/ClearingCustody";
 import SecuritiesLending from "./pages/SecuritiesLending";
 import ExecutionServices from "./pages/ExecutionServices";
 import CorporateTreasury from "./pages/CorporateTreasury";
-import InvestmentBanking from "./pages/InvestmentBanking";
 import RegulatoryCompliance from "./pages/RegulatoryCompliance";
 import Disclosures from "./pages/Disclosures";
 import NotFound from "./pages/NotFound";
@@ -52,7 +51,6 @@ const AnimatedRoutes = () => {
         <Route path="/services/securities-lending" element={<PageTransition><SecuritiesLending /></PageTransition>} />
         <Route path="/services/execution-services" element={<PageTransition><ExecutionServices /></PageTransition>} />
         <Route path="/services/corporate-treasury" element={<PageTransition><CorporateTreasury /></PageTransition>} />
-        <Route path="/services/investment-banking" element={<PageTransition><InvestmentBanking /></PageTransition>} />
         <Route path="/services/regulatory-compliance" element={<PageTransition><RegulatoryCompliance /></PageTransition>} />
         <Route path="/disclosures" element={<PageTransition><Disclosures /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />

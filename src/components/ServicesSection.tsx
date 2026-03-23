@@ -1,4 +1,4 @@
-import { ArrowLeftRight, TrendingUp, Zap, Landmark, Briefcase, ShieldCheck } from "lucide-react";
+import { ArrowLeftRight, TrendingUp, Zap, Landmark, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -32,13 +32,6 @@ const services = [
     iconClass: "icon-float",
   },
   {
-    icon: Briefcase,
-    title: "Investment Banking",
-    href: "/services/investment-banking",
-    description: "Strategic advisory, capital raising, and transaction services to help businesses grow, restructure, and access the capital markets.",
-    iconClass: "icon-float",
-  },
-  {
     icon: ShieldCheck,
     title: "Regulatory & Compliance",
     href: "/services/regulatory-compliance",
@@ -53,7 +46,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 [&>*:last-child]:md:col-span-2 [&>*:last-child]:md:max-w-sm [&>*:last-child]:md:mx-auto [&>*:last-child]:md:w-full">
           {services.map((s, i) => (
             <motion.div
               key={s.title}

@@ -45,7 +45,6 @@ const Footer = () => {
                 { label: "Securities Lending & Financing", href: "/services/securities-lending" },
                 { label: "Execution Services", href: "/services/execution-services" },
                 { label: "Corporate Treasury", href: "/services/corporate-treasury" },
-                { label: "Investment Banking", href: "/services/investment-banking" },
                 { label: "Regulatory & Compliance", href: "/services/regulatory-compliance" },
               ].map((l) => (
                 <li key={l.label}>
