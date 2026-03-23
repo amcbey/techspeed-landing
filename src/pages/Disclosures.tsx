@@ -113,7 +113,7 @@ const Disclosures = () => {
                   <a href="mailto:Info@techspeedclearing.com" className="text-primary hover:underline">
                     Info@techspeedclearing.com
                   </a>{" "}
-                  or call 214-282-9256. Our office is located at 16479 Dallas Parkway, Addison, Texas 75001.
+                  or call 214-282-9256. Our office is located at 16479 Dallas Parkway, Suite #135, Addison, Texas 75001.
                 </p>
               </div>
 
