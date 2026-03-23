@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
-import logo from "@/assets/logo.png";
+import logoSymbol from "@/assets/logo-symbol.png";
+import logoWordmark from "@/assets/logo-wordmark.png";
 
 const serviceLinks = [
   { label: "Clearing & Custody", href: "/services/clearing-custody" },
@@ -71,7 +72,8 @@ const Header = () => {
           onClick={(e) => { e.preventDefault(); navigate("/"); }}
           className="flex items-center gap-2 font-bold text-xl tracking-tight text-foreground"
         >
-          <img src={logo} alt="TechSpeed logo" className="h-8 w-auto" />
+          <img src={logoSymbol} alt="TechSpeed symbol" className="h-8 w-auto" />
+          <img src={logoWordmark} alt="TechSpeed Clearing" className="h-8 w-auto" />
         </a>
 
         {/* Desktop nav */}

@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logo from "@/assets/logo-white.png";
+import logo from "@/assets/logo-footer.jpg";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -155,7 +155,7 @@ const Footer = () => {
         <div className="container flex flex-col items-center gap-5">
           {/* Logo */}
           <div className="flex items-center gap-2 font-bold text-lg text-footer-bottom-foreground">
-            <img src={logo} alt="TechSpeed logo" className="h-12 w-auto object-contain" />
+            <img src={logo} alt="TechSpeed logo" className="h-24 w-auto object-contain" />
           </div>
 
           <a
