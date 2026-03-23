@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Building2, TrendingUp, User, Landmark } from "lucide-react";
+import { Building2, ArrowLeftRight, User, Landmark } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -8,7 +8,7 @@ const sections = [
   {
     id: "correspondent-clearing",
     number: "01",
-    icon: TrendingUp,
+    icon: ArrowLeftRight,
     title: "Correspondent Clearing",
     body: "We provide competitive pricing, technological infrastructure, trading tools, real-time data, and client support including detailed reporting to prop traders, market makers, and high-frequency trading groups to help them excel in the high-risk, high-reward ecosystem in which they operate.",
   },

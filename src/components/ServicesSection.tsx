@@ -1,10 +1,10 @@
-import { Layers, TrendingUp, Zap, Landmark, Briefcase, ShieldCheck } from "lucide-react";
+import { ArrowLeftRight, TrendingUp, Zap, Landmark, Briefcase, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const services = [
   {
-    icon: Layers,
+    icon: ArrowLeftRight,
     title: "Clearing & Custody",
     href: "/services/clearing-custody",
     description: "Comprehensive post-trade processing across equities, options, and fixed income — with competitive rates and custom reporting.",

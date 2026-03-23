@@ -40,22 +40,9 @@ const SecuritiesLending = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Banner */}
-        <div className="relative overflow-hidden bg-black py-24 flex items-center justify-center min-h-[280px]">
-          <motion.div
-            className="absolute w-80 h-80 rounded-full blur-3xl"
-            style={{ background: "rgba(0,255,255,0.08)" }}
-            animate={{ x: [0, 50, -30, 0], y: [0, -30, 40, 0] }}
-            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-            style={{ top: "-5rem", left: "5%", background: "rgba(41,98,255,0.15)" }}
-          />
-          <motion.div
-            className="absolute w-96 h-96 rounded-full blur-3xl"
-            animate={{ x: [0, -40, 20, 0], y: [0, 40, -30, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            style={{ bottom: "-6rem", right: "8%", background: "rgba(61,90,254,0.12)" }}
-          />
+        <div className="relative overflow-hidden py-24 flex items-center justify-center min-h-[280px]" style={{ background: "#000000" }}>
           <div
-            className="absolute inset-0 opacity-15"
+            className="absolute inset-0 opacity-5"
             style={{
               backgroundImage: "linear-gradient(rgba(41,98,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(41,98,255,0.3) 1px, transparent 1px)",
               backgroundSize: "60px 60px",

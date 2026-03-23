@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 
+
 const InvestmentBanking = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -10,18 +11,6 @@ const InvestmentBanking = () => {
       <main className="flex-1">
         {/* Hero Banner */}
         <div className="relative overflow-hidden bg-foreground py-24 flex items-center justify-center min-h-[280px]">
-          <motion.div
-            className="absolute w-72 h-72 rounded-full bg-blue-500/20 blur-3xl"
-            animate={{ x: [0, 60, -40, 0], y: [0, -40, 30, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            style={{ top: "-4rem", left: "10%" }}
-          />
-          <motion.div
-            className="absolute w-96 h-96 rounded-full bg-indigo-500/15 blur-3xl"
-            animate={{ x: [0, -50, 30, 0], y: [0, 50, -20, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            style={{ bottom: "-6rem", right: "5%" }}
-          />
           <div
             className="absolute inset-0 opacity-10"
             style={{

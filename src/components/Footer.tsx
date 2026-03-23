@@ -124,7 +124,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin size={16} /> 16479 Dallas Parkway, Addison, Texas 75001
+                <MapPin size={16} /> 16479 Dallas Parkway, Suite 135, Addison, Texas 75001
               </li>
             </ul>
           </div>
