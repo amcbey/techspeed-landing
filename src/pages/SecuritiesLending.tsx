@@ -3,37 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
 
-const subsections1 = [
-  {
-    title: "Easy-To-Borrow Securities",
-    body: "For seamless transactions throughout the day, we provide an easy-to-borrow securities list to our clients before the market opening.",
-  },
-  {
-    title: "Locate Required Securities",
-    body: "We can help you locate stocks that require locates due to their limited supply, unlisted status, or low liquidity. TechSpeed specializes in locating the most in-demand securities for our clients.",
-  },
-  {
-    title: "API Connectivity For Locates",
-    body: "TechSpeed has streamlined the securities locate process by combining multiple trading system search functions into our platform allowing customers to complete transactions quickly. Through API connectivity, users on various trading platforms, grey boxes or black boxes can easily place short trades while comfortably remaining in compliance with industry regulations.",
-  },
-];
-
-const subsections2 = [
-  {
-    title: "Securities Lending and Borrowing",
-    body: "Techspeed's Securities Lending System, managed by a professional team, allows us to control costs and rates of securities lending and borrowing. We offer clients term loans on certain securities, providing protection from rate and term changes and removing recall risk. We can also re-rate loans for the benefit of our customers.",
-  },
-  {
-    title: "Fully Paid Lending",
-    body: "Fully paid for lending for clearing and prime customers offers portfolio rebate opportunities. TechSpeed can lend securities, receive rebates, and share with the client. Loans are secured by cash collateral and held at a separate bank in the customer's name. TechSpeed can offer fully paid lending to our omnibus customers and to fully disclosed customers on a case-by-case basis.",
-  },
-  {
-    title: "Margin Lending",
-    body: "Utilize margin lending through Regulation T or portfolio margin to trade on leverage or to access funding for a margin loan.",
-    disclaimer: "*Margin borrowing entails significant risk and is only for experienced investors. You may lose more than your initial investment.",
-  },
-];
-
 const SecuritiesLending = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -96,41 +65,185 @@ const SecuritiesLending = () => {
         </div>
 
         <section className="py-16 bg-background">
-          <div className="container max-w-5xl">
-            <p className="text-muted-foreground leading-relaxed mb-12">
-              TechSpeed Clearing specializes in securities lending services working with diverse
-              counterparties to generate meaningful revenue for our clients. Featuring seasoned
-              market expertise, an exceptional breadth of securities, and white glove client
-              services, we work with multiple partners to &ldquo;locate&rdquo; a supply of
-              securities to enable short sales and, for positions being held overnight, provision
-              a loan of the actual shares themselves. We also offer fully paid lending, an
-              excellent revenue opportunity for clients.
-            </p>
+          <div className="container max-w-4xl space-y-12">
 
-            {/* Row 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {subsections1.map((s) => (
-                <div key={s.title}>
-                  <h3 className="text-lg font-bold text-foreground mb-3">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
-                </div>
-              ))}
+            {/* Intro */}
+            <div>
+              <h2 className="text-2xl font-bold text-foreground mb-4">What is stock (or securities) lending?</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Securities lending plays a crucial role in global financial markets. It helps to increase market liquidity by making more shares available for trading and supports a variety of trading strategies. It also gives investors additional ways to earn a return from the securities they own. The practice has been used by banks, asset management firms, pension plans, other financial institutions and central banks worldwide for decades.
+              </p>
             </div>
 
-            {/* Row 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {subsections2.map((s) => (
-                <div key={s.title}>
-                  <h3 className="text-lg font-bold text-foreground mb-3">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
-                  {s.disclaimer && (
-                    <p className="text-xs text-muted-foreground/70 mt-3 italic">{s.disclaimer}</p>
-                  )}
-                </div>
-              ))}
+            {/* Definition */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-3">Definition and Overview</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Securities lending is the practice of temporarily loaning stocks, bonds, or other securities from one party (the lender) to another (the borrower) for a fee. It is primarily done by large financial institutions like investment banks, asset management firms, clearing firms, pension plans, and retail brokerage firms.
+              </p>
             </div>
+
+            {/* How it works */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-4">How It Works</h2>
+              <ol className="space-y-5">
+                {[
+                  {
+                    n: "1",
+                    title: "A borrower identifies a need.",
+                    body: "A borrower, such as a hedge fund or broker-dealer, needs to borrow a security for a specific purpose, most commonly for short selling or to cover a failed trade. The borrower puts together a list of securities they need and sends that 'demand list' out to the street (all of their sec lend contacts).",
+                  },
+                  {
+                    n: "2",
+                    title: "The lending agent (TechSpeed) finds a match.",
+                    body: "The borrower's request is typically handled by a lending agent. The lender will search their stock record and match the request with available securities from their stock record.",
+                  },
+                  {
+                    n: "3",
+                    title: "Collateral is provided.",
+                    body: "The borrower posts collateral, usually in the form of cash or other securities, to guarantee the loan. This collateral is typically worth more than the borrowed security — often 102% to 105% of its market value — and is 'marked to market' daily to ensure its value is maintained.",
+                  },
+                  {
+                    n: "4",
+                    title: "The loan is completed.",
+                    body: "The lender transfers the security to the borrower, who can then use it for their purposes.",
+                  },
+                  {
+                    n: "5",
+                    title: "A fee is paid.",
+                    body: "The borrower pays the lender a fee, which is a key source of revenue for the lender.",
+                  },
+                  {
+                    n: "6",
+                    title: "The loan is closed.",
+                    body: "When the loan is over, the borrower returns the security to the lender, and the lender returns the collateral to the borrower.",
+                  },
+                ].map((step) => (
+                  <li key={step.n} className="flex gap-4">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">{step.n}</span>
+                    <div>
+                      <span className="font-semibold text-foreground">{step.title} </span>
+                      <span className="text-muted-foreground leading-relaxed">{step.body}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="text-muted-foreground leading-relaxed mt-5">
+                <span className="font-semibold text-foreground">Fully Paid Securities Lending (FPSL)</span> allows investors to earn passive income by lending their fully owned, non-margin stocks to brokers who then loan them to other financial institutions. In return, the investor receives cash collateral and earns interest payments based on the demand for their securities. The lending fee is split between the lender and the investor. The cash collateral is held in a third-party protected bank account that earns interest.
+              </p>
+            </div>
+
+            {/* Why borrowers borrow */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-4">Why Borrowers Borrow</h2>
+              <ul className="space-y-2">
+                {[
+                  { label: "To short sell:", body: "An investor borrows a security to sell it immediately, hoping to buy it back later at a lower price to return to the lender." },
+                  { label: "To facilitate trading:", body: "Brokers may borrow securities to cover failed trades and ensure timely settlement, which keeps markets liquid and efficient." },
+                  { label: "To hedge:", body: "Investors borrow securities to protect against other positions in their portfolios." },
+                  { label: "For corporate control:", body: "In rare cases, some investors may borrow shares to acquire additional voting power ahead of a corporate vote." },
+                ].map((item) => (
+                  <li key={item.label} className="flex gap-2 text-muted-foreground leading-relaxed">
+                    <span className="text-primary mt-1">·</span>
+                    <span><span className="font-semibold text-foreground">{item.label}</span> {item.body}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Why lenders lend */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-4">Why Lenders Lend</h2>
+              <ul className="space-y-2">
+                <li className="flex gap-2 text-muted-foreground leading-relaxed">
+                  <span className="text-primary mt-1">·</span>
+                  <span><span className="font-semibold text-foreground">To generate extra income:</span> By lending securities that would otherwise be sitting dormant in a portfolio, lenders can earn fees to increase their overall returns.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* What makes it unique */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-3">What Makes It Unique</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Securities lending offers investors a way to generate passive income from their stocks without having to sell them.
+              </p>
+            </div>
+
+            {/* Benefits */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-4">Benefits for Lenders</h2>
+              <ul className="space-y-2">
+                {[
+                  { label: "Additional income:", body: "Lenders can earn a fee for lending out stocks." },
+                  { label: "Potential price appreciation:", body: "Borrowers have to return the stock at the current price, meaning lenders don't give up any potential gains they have while their shares are on loan." },
+                  { label: "Retain ownership:", body: "Lenders retain ownership of their stocks and can sell them at any time. However, they give up voting rights while the securities are on loan. If the lender wishes to vote in an upcoming corporate event, we can simply recall the loan from the borrower for T+1." },
+                  { label: "Avoid taxable events:", body: "Lenders don't have to sell their securities to generate income (while those payments may still be subject to tax, stock lending could help avoid a larger taxable event when selling shares from a non-registered account)." },
+                ].map((item) => (
+                  <li key={item.label} className="flex gap-2 text-muted-foreground leading-relaxed">
+                    <span className="text-primary mt-1">·</span>
+                    <span><span className="font-semibold text-foreground">{item.label}</span> {item.body}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Risks */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-4">The Risks and Trade-offs</h2>
+              <ul className="space-y-2">
+                {[
+                  { label: "Borrower default:", body: "There is a risk that the borrower may not return the security. The collateral mitigates this, but in rare events, like the 2008 financial crisis, there is a risk that the collateral's value could drop (Southwest & Lehman Bros)." },
+                  { label: "Credit risk:", body: "There's a small risk that the value of the shares borrowed could grow such that the borrower is unable to return the shares. To mitigate this risk and ensure lenders are 100% covered, borrowers are required to provide collateral equal to 102% of the value of the shares." },
+                  { label: "Loss of voting rights:", body: "The title and ownership rights temporarily transfer to the borrower, which means the lender forfeits any voting rights associated with the security for the duration of the loan. If the owner of the stock wants to vote, we would issue a recall for T+1." },
+                  { label: "Complex tax implications:", body: "Dividends paid on loaned stock are treated differently for tax purposes, as the borrower makes a substitute payment to the lender." },
+                ].map((item) => (
+                  <li key={item.label} className="flex gap-2 text-muted-foreground leading-relaxed">
+                    <span className="text-primary mt-1">·</span>
+                    <span><span className="font-semibold text-foreground">{item.label}</span> {item.body}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Example */}
+            <div>
+              <h2 className="text-xl font-bold text-foreground mb-4">Here's an Example of How the Interest Adds Up</h2>
+              <div className="rounded-lg border border-border bg-secondary/40 p-6 max-w-md">
+                <table className="w-full text-sm">
+                  <tbody>
+                    <tr className="border-b border-border">
+                      <td className="py-2 text-muted-foreground">ABC Shares on loan</td>
+                      <td className="py-2 text-right font-semibold text-foreground">10,000</td>
+                    </tr>
+                    <tr className="border-b border-border">
+                      <td className="py-2 text-muted-foreground">Market price</td>
+                      <td className="py-2 text-right font-semibold text-foreground">$10</td>
+                    </tr>
+                    <tr className="border-b border-border">
+                      <td className="py-2 text-muted-foreground">Market value</td>
+                      <td className="py-2 text-right font-semibold text-foreground">$100,000</td>
+                    </tr>
+                    <tr className="border-b border-border">
+                      <td className="py-2 text-muted-foreground">Annualized lending interest rate</td>
+                      <td className="py-2 text-right font-semibold text-foreground">8.50%</td>
+                    </tr>
+                    <tr className="border-b border-border">
+                      <td className="py-2 text-muted-foreground">Daily accrual ($100,000 × 8.50% ÷ 360)</td>
+                      <td className="py-2 text-right font-semibold text-foreground">$23.61</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 text-muted-foreground font-semibold">Hypothetical monthly income</td>
+                      <td className="py-2 text-right font-bold text-primary text-base">$708.30</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           </div>
         </section>
+
         <CTABanner
           heading="Explore Our Lending Solutions"
           subtext="Contact our team to discuss how TechSpeed's securities lending and financing services can work for your business."
