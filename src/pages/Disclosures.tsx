@@ -103,6 +103,19 @@ const Disclosures = () => {
                   use, and safeguard personal information in accordance with applicable privacy laws and
                   regulations, including Regulation S-P. We do not sell personal information to third parties.
                 </p>
+                <p className="text-muted-foreground leading-relaxed mt-3">
+                  <a href="/privacy-policy.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                    View our Privacy Policy
+                  </a>
+                </p>
+              </div>
+
+              {/* TechSpeed Clearing Disclosures */}
+              <div className="border-t border-border pt-8">
+                <h2 className="text-xl font-bold text-foreground mb-3">TechSpeed Clearing, LLC Disclosures</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Content coming soon.
+                </p>
               </div>
 
               {/* Contact */}
