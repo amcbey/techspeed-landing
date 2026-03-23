@@ -65,7 +65,7 @@ const InquirySection = () => {
     setError("");
 
     const templateParams = {
-      to_email: "general@techspeedclearing.com",
+      to_email: "Info@techspeedclearing.com",
       first_name: firstName,
       last_name: lastName,
       email,
@@ -85,7 +85,7 @@ const InquirySection = () => {
       );
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again or email us directly at general@techspeedclearing.com.");
+      setError("Something went wrong. Please try again or email us directly at Info@techspeedclearing.com.");
     } finally {
       setLoading(false);
     }

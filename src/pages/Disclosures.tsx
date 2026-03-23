@@ -110,8 +110,8 @@ const Disclosures = () => {
                 <h2 className="text-xl font-bold text-foreground mb-3">Contact Us</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   For questions regarding these disclosures, please contact us at{" "}
-                  <a href="mailto:general@techspeedclearing.com" className="text-primary hover:underline">
-                    general@techspeedclearing.com
+                  <a href="mailto:Info@techspeedclearing.com" className="text-primary hover:underline">
+                    Info@techspeedclearing.com
                   </a>{" "}
                   or call 214-282-9256. Our office is located at 16479 Dallas Parkway, Addison, Texas 75001.
                 </p>
