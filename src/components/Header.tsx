@@ -155,10 +155,10 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Button variant="nav-login" size="sm" onClick={() => window.open("https://clearingola.pacsquare.com/", "_blank")}>
+              <Button variant="nav-login" size="sm" onClick={() => navigate("/login")}>
                 Log In
               </Button>
-              <Button variant="nav-create" size="sm" onClick={() => window.open("https://clearingola.pacsquare.com/", "_blank")}>
+              <Button variant="nav-create" size="sm" onClick={() => window.open("https://ola.fintexfinancial.com/", "_blank")}>
                 Create Account
               </Button>
             </>
@@ -261,10 +261,10 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <Button variant="nav-login" size="sm" onClick={() => { setMobileOpen(false); window.open("https://clearingola.pacsquare.com/", "_blank"); }}>
+                  <Button variant="nav-login" size="sm" onClick={() => { setMobileOpen(false); navigate("/login"); }}>
                     Log In
                   </Button>
-                  <Button variant="nav-create" size="sm" onClick={() => { setMobileOpen(false); window.open("https://clearingola.pacsquare.com/", "_blank"); }}>
+                  <Button variant="nav-create" size="sm" onClick={() => { setMobileOpen(false); window.open("https://ola.fintexfinancial.com/", "_blank"); }}>
                     Create Account
                   </Button>
                 </>

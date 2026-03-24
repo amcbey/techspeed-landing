@@ -26,7 +26,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-bw.png";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -70,7 +70,7 @@ const Login = () => {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-4">
           <Link to="/" className="inline-block mx-auto">
-            <img src={logo} alt="TechSpeed logo" className="h-10 w-auto mx-auto" />
+            <img src={logo} alt="TechSpeed logo" className="h-56 w-auto mx-auto object-contain" />
           </Link>
           <div>
             <CardTitle className="text-2xl">Welcome back</CardTitle>
