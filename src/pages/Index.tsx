@@ -31,7 +31,7 @@ const Index = () => {
                 <div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-1">Transparency & Trust</p>
                   <h3 className="text-xl font-bold text-white">Audited Financial Statements</h3>
-                  <p className="text-white/50 text-sm mt-1">Independently audited financials for the fiscal year 2025.</p>
+                  <p className="text-white/50 text-sm mt-1">Audited financials for the fiscal year 2025.</p>
                 </div>
               </div>
               <a
