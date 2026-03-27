@@ -20,7 +20,7 @@ const statements = [
     align: "left",
   },
   {
-    heading: "We Move at Speed.",
+    heading: "We Move with Speed.",
     body: "In financial markets, milliseconds matter. Our technology is engineered for performance — fast, reliable, and always on.",
     align: "right",
   },
@@ -85,7 +85,7 @@ const OurMission = () => {
                   </p>
                   <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
                     {s.heading.includes("Speed") ? (
-                      <>We Move at <span className="animated-gradient-text">Speed.</span></>
+                      <>We Move with <span className="animated-gradient-text">Speed.</span></>
                     ) : s.heading}
                   </h2>
                   <div className={`w-16 h-0.5 bg-blue-500 mb-4 ${s.align === "right" ? "ml-auto" : ""}`} />
