@@ -15,7 +15,7 @@ const statements = [
     align: "right",
   },
   {
-    heading: "We Guard the Markets.",
+    heading: "We Operate with Integrity.",
     body: "Integrity is non-negotiable. Every trade we touch is processed with precision, transparency, and an unwavering commitment to market safety.",
     align: "left",
   },
