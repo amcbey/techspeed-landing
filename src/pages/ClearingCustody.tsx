@@ -10,23 +10,35 @@ const ClearingCustody = () => {
       <main className="flex-1">
         {/* Hero Banner */}
         <div className="relative overflow-hidden bg-foreground py-24 flex items-center justify-center min-h-[280px]">
+          {/* Pulsing flashes */}
           <motion.div
-            className="absolute w-72 h-72 rounded-full bg-blue-500/20 blur-3xl"
-            animate={{ x: [0, 60, -40, 0], y: [0, -40, 30, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            style={{ top: "-4rem", left: "10%" }}
+            className="absolute inset-0"
+            animate={{ backgroundColor: ["rgba(41,98,255,0.07)", "rgba(0,0,0,0.4)", "rgba(41,98,255,0.18)", "rgba(0,0,0,0.3)", "rgba(41,98,255,0.07)"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute w-96 h-96 rounded-full bg-indigo-500/15 blur-3xl"
-            animate={{ x: [0, -50, 30, 0], y: [0, 50, -20, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            style={{ bottom: "-6rem", right: "5%" }}
+            className="absolute w-[600px] h-[600px] rounded-full blur-[120px]"
+            style={{ top: "50%", left: "50%", x: "-50%", y: "-50%" }}
+            animate={{ backgroundColor: ["rgba(41,98,255,0.08)", "rgba(0,0,0,0.5)", "rgba(41,98,255,0.22)", "rgba(99,102,241,0.12)", "rgba(0,0,0,0.4)", "rgba(41,98,255,0.08)"] }}
+            transition={{ duration: 35, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute w-48 h-48 rounded-full bg-blue-400/10 blur-2xl"
-            animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            style={{ top: "20%", right: "25%" }}
+            className="absolute w-40 h-40 rounded-full blur-2xl"
+            style={{ top: "10%", left: "8%" }}
+            animate={{ opacity: [0, 0.6, 0], backgroundColor: ["rgba(41,98,255,0)", "rgba(41,98,255,0.3)", "rgba(41,98,255,0)"] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          />
+          <motion.div
+            className="absolute w-32 h-32 rounded-full blur-2xl"
+            style={{ bottom: "10%", right: "10%" }}
+            animate={{ opacity: [0, 0.5, 0], backgroundColor: ["rgba(99,102,241,0)", "rgba(99,102,241,0.35)", "rgba(99,102,241,0)"] }}
+            transition={{ duration: 28, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          />
+          <motion.div
+            className="absolute w-24 h-24 rounded-full blur-xl"
+            style={{ top: "30%", right: "15%" }}
+            animate={{ opacity: [0, 0.4, 0], backgroundColor: ["rgba(41,98,255,0)", "rgba(41,98,255,0.4)", "rgba(41,98,255,0)"] }}
+            transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           />
           <div
             className="absolute inset-0 opacity-10"
